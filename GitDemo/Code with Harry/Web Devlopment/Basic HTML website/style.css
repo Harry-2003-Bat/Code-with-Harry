@@ -1,0 +1,51 @@
+* { box-sizing: border-box; }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-image:url(GitDemo/Code with Harry/Web Devlopment/Basic HTML website/backgroud image 1.jpg);
+    background: linear-gradient(grey,black,red);
+    background-repeat: no-repeat;
+    color: #000000;
+}
+
+h1, p { text-align: center;
+ font-family: "bungee tint"
+ }
+
+.site-header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid #ccc;
+    font-family: "bungee tint"
+}
+
+.site-nav { display: flex; gap: 1rem; }
+.site-nav a { text-decoration: none; color: #0066cc; }
+.site-nav a:hover { text-decoration: underline; }
+
+.header {
+    font-family: "bungee tint"
+}
+
+section {
+    background: white;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+h3 { border-bottom: 2px solid #0066cc; padding-bottom: 0.3rem; 
+font-family : bungee tint }
+
+table { border-collapse: collapse; }
+td, th { border: 1px solid #ccc; padding: 0.4rem 0.8rem; }

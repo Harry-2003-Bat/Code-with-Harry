@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A visual guide to common HTML elements that display as blocks, with explanations and examples.">
+  <title>HTML Block Elements — Reference Guide</title>
+  <style>
+    :root{--bg:#f5f7fb;--surface:#fff;--ink:#172033;--muted:#647087;--line:#e2e7f0;--accent:#5b5ce2;--accent-soft:#eeeeff;--code:#111827;--green:#13795b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    header{background:linear-gradient(125deg,#171b38,#383b86 65%,#6567e9);color:white;padding:58px 22px 50px} .hero{max-width:1080px;margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;font-weight:700;color:#c9cbff}.hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;margin:12px 0 16px}.hero p{max-width:700px;color:#e1e3ff;font-size:1.08rem;margin:0}.pill{display:inline-block;border:1px solid #7779dc;border-radius:99px;padding:5px 11px;font-size:.78rem;margin-top:22px;color:#f1f1ff}
+    .layout{max-width:1080px;margin:32px auto;padding:0 22px;display:grid;grid-template-columns:245px minmax(0,1fr);gap:26px}.sidebar{align-self:start;position:sticky;top:18px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}.sidebar strong{display:block;margin-bottom:10px}.sidebar a{display:block;text-decoration:none;color:var(--muted);padding:5px 0;font-size:.92rem}.sidebar a:hover{color:var(--accent)}main{min-width:0}.intro,.group,.note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:20px;box-shadow:0 5px 18px #1d2a4810}.intro h2,.group h2{margin:0 0 8px;font-size:1.35rem}.muted{color:var(--muted)}.tag-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.tag{border:1px solid var(--line);border-radius:12px;padding:15px;min-width:0}.tag h3{font:600 .98rem ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--accent);margin:0 0 5px}.tag p{margin:0 0 10px;color:var(--muted);font-size:.91rem}.tag pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f5fa;border-radius:8px;padding:10px;margin:0;color:#263047;font: .8rem/1.5 ui-monospace,SFMono-Regular,Consolas,monospace}.group{scroll-margin-top:20px}.searchbar{display:flex;gap:10px;margin-top:18px}.searchbar input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:white}.searchbar input:focus{outline:3px solid #dadaff;border-color:var(--accent)}.note{border-left:4px solid var(--green)}.note strong{color:var(--green)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#f0f1f7;padding:2px 5px;border-radius:5px;font-size:.9em}footer{text-align:center;color:var(--muted);padding:20px 22px 42px;font-size:.9rem}.empty{display:none;color:var(--muted);padding:18px 0}
+    @media(max-width:800px){.layout{grid-template-columns:1fr}.sidebar{position:static}.sidebar nav{display:flex;flex-wrap:wrap;gap:4px 16px}.tag-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header><div class="hero"><div class="eyebrow">Frontend learning · HTML reference</div><h1>HTML block elements</h1><p>A practical guide to the HTML elements commonly used to structure page sections, text, lists, forms, tables, and embedded content.</p><span class="pill">Examples · Purpose · Quick search</span></div></header>
+<div class="layout">
+  <aside class="sidebar"><strong>On this page</strong><nav><a href="#basics">What “block” means</a><a href="#structure">Page structure</a><a href="#text">Text and grouping</a><a href="#lists">Lists</a><a href="#media">Media and embeds</a><a href="#forms">Forms and interactive</a><a href="#tables">Tables</a><a href="#other">Other elements</a></nav></aside>
+  <main>
+    <section class="intro" id="basics"><h2>First, what is a block element?</h2><p class="muted">“Block element” is a common learning term, not a formal category that includes every element below. Many of these elements have <code>display: block</code> by default: they start on a new line and usually take the available width. CSS can change that behavior, and some elements have special layout rules.</p><div class="searchbar"><input id="search" type="search" placeholder="Search tags or descriptions…" aria-label="Search HTML elements"></div></section>
+    <section class="group" id="structure"><h2>1. Page structure and landmarks</h2><p class="muted">Use semantic elements to describe the role of different parts of a page.</p><div class="tag-grid">
+      <article class="tag"><h3>&lt;header&gt;</h3><p>Introductory content for a page or section, often a logo or heading.</p><pre>&lt;header&gt;
+  &lt;h1&gt;My site&lt;/h1&gt;
+&lt;/header&gt;</pre></article>
+      <article class="tag"><h3>&lt;nav&gt;</h3><p>A section containing major navigation links.</p><pre>&lt;nav&gt;
+  &lt;a href="/about"&gt;About&lt;/a&gt;
+&lt;/nav&gt;</pre></article>
+      <article class="tag"><h3>&lt;main&gt;</h3><p>The dominant, unique content of the document. Usually one per page.</p><pre>&lt;main&gt;
+  &lt;h2&gt;Welcome&lt;/h2&gt;
+&lt;/main&gt;</pre></article>
+      <article class="tag"><h3>&lt;section&gt;</h3><p>A thematic grouping of content, generally with a heading.</p><pre>&lt;section&gt;
+  &lt;h2&gt;Services&lt;/h2&gt;
+&lt;/section&gt;</pre></article>
+      <article class="tag"><h3>&lt;article&gt;</h3><p>Self-contained content that could stand on its own, such as a post.</p><pre>&lt;article&gt;
+  &lt;h2&gt;News title&lt;/h2&gt;
+  &lt;p&gt;Story…&lt;/p&gt;
+&lt;/article&gt;</pre></article>
+      <article class="tag"><h3>&lt;aside&gt;</h3><p>Related or complementary content, such as a sidebar.</p><pre>&lt;aside&gt;
+  Related links
+&lt;/aside&gt;</pre></article>
+      <article class="tag"><h3>&lt;footer&gt;</h3><p>Footer for a page or section, often containing author or legal info.</p><pre>&lt;footer&gt;
+  &lt;p&gt;© 2026&lt;/p&gt;
+&lt;/footer&gt;</pre></article>
+      <article class="tag"><h3>&lt;address&gt;</h3><p>Contact information for the relevant article or page.</p><pre>&lt;address&gt;
+  Contact: hello@example.com
+&lt;/address&gt;</pre></article>
+      <article class="tag"><h3>&lt;div&gt;</h3><p>Generic container with no semantic meaning; useful for styling or layout.</p><pre>&lt;div class="card"&gt;
+  Content
+&lt;/div&gt;</pre></article>
+    </div></section>
+    <section class="group" id="text"><h2>2. Text and content grouping</h2><div class="tag-grid">
+      <article class="tag"><h3>&lt;h1&gt;–&lt;h6&gt;</h3><p>Six levels of headings. Use them in a meaningful hierarchy.</p><pre>&lt;h1&gt;Page title&lt;/h1&gt;
+&lt;h2&gt;Section title&lt;/h2&gt;</pre></article>
+      <article class="tag"><h3>&lt;p&gt;</h3><p>A paragraph of text.</p><pre>&lt;p&gt;This is a paragraph.&lt;/p&gt;</pre></article>
+      <article class="tag"><h3>&lt;blockquote&gt;</h3><p>A quotation from another source, usually displayed as an indented block.</p><pre>&lt;blockquote cite="https://example.com"&gt;
+  A quoted passage.
+&lt;/blockquote&gt;</pre></article>
+      <article class="tag"><h3>&lt;pre&gt;</h3><p>Preformatted text that preserves spaces and line breaks.</p><pre>&lt;pre&gt;
+line one
+  line two
+&lt;/pre&gt;</pre></article>
+      <article class="tag"><h3>&lt;hr&gt;</h3><p>A thematic break between paragraph-level sections; typically a horizontal rule.</p><pre>&lt;p&gt;Part one&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Part two&lt;/p&gt;</pre></article>
+      <article class="tag"><h3>&lt;figure&gt;</h3><p>Self-contained content such as an image, diagram, or code sample.</p><pre>&lt;figure&gt;
+  &lt;img src="chart.png" alt="Sales chart"&gt;
+  &lt;figcaption&gt;Sales&lt;/figcaption&gt;
+&lt;/figure&gt;</pre></article>
+      <article class="tag"><h3>&lt;figcaption&gt;</h3><p>Caption or legend for its parent <code>&lt;figure&gt;</code>.</p><pre>&lt;figcaption&gt;
+  Figure 1: Results
+&lt;/figcaption&gt;</pre></article>
+      <article class="tag"><h3>&lt;dl&gt;</h3><p>Description list containing terms and their descriptions.</p><pre>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Markup language&lt;/dd&gt;
+&lt;/dl&gt;</pre></article>
+      <article class="tag"><h3>&lt;dt&gt; and &lt;dd&gt;</h3><p>A term/name and its description/value inside a description list.</p><pre>&lt;dt&gt;CSS&lt;/dt&gt;
+&lt;dd&gt;Stylesheet language&lt;/dd&gt;</pre></article>
+    </div></section>
+    <section class="group" id="lists"><h2>3. Lists</h2><div class="tag-grid">
+      <article class="tag"><h3>&lt;ul&gt;</h3><p>Unordered list, commonly shown with bullets.</p><pre>&lt;ul&gt;
+  &lt;li&gt;Tea&lt;/li&gt;
+  &lt;li&gt;Coffee&lt;/li&gt;
+&lt;/ul&gt;</pre></article>
+      <article class="tag"><h3>&lt;ol&gt;</h3><p>Ordered list where sequence matters.</p><pre>&lt;ol&gt;
+  &lt;li&gt;Install&lt;/li&gt;
+  &lt;li&gt;Run&lt;/li&gt;
+&lt;/ol&gt;</pre></article>
+      <article class="tag"><h3>&lt;li&gt;</h3><p>An item in an ordered or unordered list (and some menu lists).</p><pre>&lt;li&gt;Learn HTML&lt;/li&gt;</pre></article>
+      <article class="tag"><h3>&lt;menu&gt;</h3><p>A list of commands or menu items; in typical modern pages, it behaves much like a list.</p><pre>&lt;menu&gt;
+  &lt;li&gt;Save&lt;/li&gt;
+  &lt;li&gt;Print&lt;/li&gt;
+&lt;/menu&gt;</pre></article>
+    </div></section>
+    <section class="group" id="media"><h2>4. Media and embedded content</h2><div class="tag-grid">
+      <article class="tag"><h3>&lt;video&gt;</h3><p>Embeds a video player.</p><pre>&lt;video controls width="320"&gt;
+  &lt;source src="clip.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</pre></article>
+      <article class="tag"><h3>&lt;audio&gt;</h3><p>Embeds audio content with optional playback controls.</p><pre>&lt;audio controls&gt;
+  &lt;source src="song.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</pre></article>
+      <article class="tag"><h3>&lt;canvas&gt;</h3><p>Bitmap drawing surface controlled with JavaScript.</p><pre>&lt;canvas id="chart" width="300" height="150"&gt;
+  Canvas not supported.
+&lt;/canvas&gt;</pre></article>
+      <article class="tag"><h3>&lt;iframe&gt;</h3><p>Embeds another HTML page within the current page.</p><pre>&lt;iframe title="Example" src="https://example.com"&gt;
+&lt;/iframe&gt;</pre></article>
+      <article class="tag"><h3>&lt;object&gt;</h3><p>Embeds an external resource, potentially with fallback content.</p><pre>&lt;object data="file.pdf" type="application/pdf"&gt;
+  PDF unavailable.
+&lt;/object&gt;</pre></article>
+      <article class="tag"><h3>&lt;embed&gt;</h3><p>Embeds external content; support and use cases depend on the browser and resource.</p><pre>&lt;embed src="file.pdf" type="application/pdf"&gt;</pre></article>
+    </div></section>
+    <section class="group" id="forms"><h2>5. Forms and interactive elements</h2><div class="tag-grid">
+      <article class="tag"><h3>&lt;form&gt;</h3><p>Groups controls for submitting user-provided data.</p><pre>&lt;form action="/signup" method="post"&gt;
+  &lt;label for="email"&gt;Email&lt;/label&gt;
+  &lt;input id="email" type="email"&gt;
+  &lt;button&gt;Join&lt;/button&gt;
+&lt;/form&gt;</pre></article>
+      <article class="tag"><h3>&lt;fieldset&gt;</h3><p>Groups related form controls, often with a legend.</p><pre>&lt;fieldset&gt;
+  &lt;legend&gt;Account&lt;/legend&gt;
+  &lt;input name="user"&gt;
+&lt;/fieldset&gt;</pre></article>
+      <article class="tag"><h3>&lt;legend&gt;</h3><p>Caption for a <code>&lt;fieldset&gt;</code>.</p><pre>&lt;legend&gt;Contact details&lt;/legend&gt;</pre></article>
+      <article class="tag"><h3>&lt;label&gt;</h3><p>Caption for a form control. It is inline by default, but can be styled as block.</p><pre>&lt;label for="name"&gt;Name&lt;/label&gt;
+&lt;input id="name"&gt;</pre></article>
+      <article class="tag"><h3>&lt;details&gt;</h3><p>Disclosure widget that users can open or close.</p><pre>&lt;details&gt;
+  &lt;summary&gt;More info&lt;/summary&gt;
+  Extra details here.
+&lt;/details&gt;</pre></article>
+      <article class="tag"><h3>&lt;summary&gt;</h3><p>Visible label for a <code>&lt;details&gt;</code> disclosure widget.</p><pre>&lt;summary&gt;Show answer&lt;/summary&gt;</pre></article>
+      <article class="tag"><h3>&lt;dialog&gt;</h3><p>Dialog box, such as a modal or non-modal dialog.</p><pre>&lt;dialog open&gt;
+  Dialog content
+&lt;/dialog&gt;</pre></article>
+      <article class="tag"><h3>&lt;output&gt;</h3><p>Displays the result of a calculation or user action; inline by default.</p><pre>&lt;output&gt;42&lt;/output&gt;</pre></article>
+    </div></section>
+    <section class="group" id="tables"><h2>6. Tables</h2><p class="muted">Table elements have their own layout model. They are structural elements, even though their display behavior is not the same as a normal block box.</p><div class="tag-grid">
+      <article class="tag"><h3>&lt;table&gt;</h3><p>Represents tabular data.</p><pre>&lt;table&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;td&gt;Asha&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;</pre></article>
+      <article class="tag"><h3>&lt;caption&gt;</h3><p>Title or caption for a table.</p><pre>&lt;caption&gt;Student marks&lt;/caption&gt;</pre></article>
+      <article class="tag"><h3>&lt;thead&gt;</h3><p>Groups the header rows of a table.</p><pre>&lt;thead&gt;
+  &lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;</pre></article>
+      <article class="tag"><h3>&lt;tbody&gt;</h3><p>Groups the main data rows of a table.</p><pre>&lt;tbody&gt;
+  &lt;tr&gt;&lt;td&gt;Asha&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;</pre></article>
+      <article class="tag"><h3>&lt;tfoot&gt;</h3><p>Groups footer rows, such as totals or summaries.</p><pre>&lt;tfoot&gt;
+  &lt;tr&gt;&lt;td&gt;Total&lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;</pre></article>
+      <article class="tag"><h3>&lt;tr&gt;</h3><p>A row of cells in a table.</p><pre>&lt;tr&gt;
+  &lt;th&gt;Subject&lt;/th&gt;
+  &lt;td&gt;HTML&lt;/td&gt;
+&lt;/tr&gt;</pre></article>
+      <article class="tag"><h3>&lt;th&gt; and &lt;td&gt;</h3><p>Header cell and data cell. Their display is table-cell, not ordinary block.</p><pre>&lt;th scope="col"&gt;Name&lt;/th&gt;
+&lt;td&gt;Asha&lt;/td&gt;</pre></article>
+      <article class="tag"><h3>&lt;colgroup&gt; and &lt;col&gt;</h3><p>Define groups of columns and column-level properties.</p><pre>&lt;colgroup&gt;
+  &lt;col span="2"&gt;
+&lt;/colgroup&gt;</pre></article>
+    </div></section>
+    <section class="group" id="other"><h2>7. Other useful structural elements</h2><div class="tag-grid">
+      <article class="tag"><h3>&lt;search&gt;</h3><p>Semantic container for search or filtering controls; block-level by default in browsers that support it.</p><pre>&lt;search&gt;
+  &lt;form&gt;&lt;input type="search"&gt;&lt;/form&gt;
+&lt;/search&gt;</pre></article>
+      <article class="tag"><h3>&lt;noscript&gt;</h3><p>Fallback content shown when scripting is unavailable or disabled. Its display depends on context.</p><pre>&lt;noscript&gt;
+  Enable JavaScript for this feature.
+&lt;/noscript&gt;</pre></article>
+      <article class="tag"><h3>&lt;body&gt;</h3><p>Contains the document’s visible content. It is a document-level element, not a content section to repeat.</p><pre>&lt;body&gt;
+  &lt;main&gt;Page content&lt;/main&gt;
+&lt;/body&gt;</pre></article>
+    </div></section>
+    <section class="note"><strong>Learning tip</strong><p>Focus first on <code>div</code>, headings, <code>p</code>, lists, and semantic layout elements such as <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>article</code>, <code>aside</code>, and <code>footer</code>. Then learn forms, tables, and embedded media. Not every element shown is technically a block-level element by default; check the element’s default display behavior when that distinction matters.</p></section>
+  </main>
+</div>
+<footer>HTML Block Elements Reference · Use semantic HTML and meaningful heading order.</footer>
+<script>
+  const search = document.getElementById('search');
+  const cards = [...document.querySelectorAll('.tag')];
+  const groups = [...document.querySelectorAll('.group')];
+  const empty = document.createElement('p'); empty.className = 'empty'; empty.textContent = 'No matching elements found.';
+  document.querySelector('main').appendChild(empty);
+  search.addEventListener('input', () => {
+    const term = search.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(card => {
+      const match = card.textContent.toLowerCase().includes(term);
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    groups.forEach(group => {
+      const hasVisible = [...group.querySelectorAll('.tag')].some(card => !card.hidden);
+      group.hidden = !hasVisible;
+    });
+    empty.style.display = visible ? 'none' : 'block';
+  });
+</script>
+</body>
+</html>
