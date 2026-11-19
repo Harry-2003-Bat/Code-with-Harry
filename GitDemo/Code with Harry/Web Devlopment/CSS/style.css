@@ -1,4 +1,32 @@
+body{
+    margin: 0px;
+    ;
+
 #box1{
     border: 5px solid;
-
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: red;
+}
+#box2{
+    border: 5px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: yellow;
+}
+#box3{
+    border: 5px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: blue;
+}
+#box4{
+    border: 5px solid;
+    width: 250px;
+    height: 250px;
+    font-size: 22px;
+    background: green;
 }
